@@ -1,9 +1,12 @@
 import streamlit as st
 from langchain.llms import OpenAI
+from langchain_openai import ChatOpenAI
 
 """Administracion de memoria"""
 from langchain.memory import ConversationBufferMemory
 buffer_memory = ConversationBufferMemory()
+
+llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=5, api_key=openai_api_key)
 
 from langchain.chains import ConversationChain
 conversation = ConversationChain(
