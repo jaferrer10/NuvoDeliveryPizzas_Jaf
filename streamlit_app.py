@@ -1,6 +1,6 @@
 import streamlit as st
-from langchain import OpenAI
-from langchain.openai import ChatOpenAI
+from langchain.llms import OpenAI
+from OpenAI import ChatOpenAI
 
 """Administracion de memoria"""
 from langchain.memory import ConversationBufferMemory
