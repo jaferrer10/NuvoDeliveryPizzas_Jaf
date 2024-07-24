@@ -2,6 +2,16 @@ import streamlit as st
 from langchain.llms import OpenAI
 from OpenAI import ChatOpenAI
 
+messages = [("system","""Eres un chatbot y debes comportate como dueño de una prestigiosa Pizzeria de Argentina""")]
+#Inicializacmos el historial del chat
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+#Muestra los mensajes del chat del historial al recargar la app
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+
 """Administracion de memoria"""
 from langchain.memory import ConversationBufferMemory
 buffer_memory = ConversationBufferMemory()
