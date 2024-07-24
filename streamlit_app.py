@@ -6,7 +6,7 @@ from OpenAI import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 buffer_memory = ConversationBufferMemory()
 
-llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=5, api_key=openai_api_key)
+llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=0, api_key=openai_api_key)
 
 from langchain.chains import ConversationChain
 conversation = ConversationChain(
