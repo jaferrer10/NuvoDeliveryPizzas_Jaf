@@ -1,5 +1,17 @@
 import streamlit as st
-from openai import OpenAI
+from langchain.llms import OpenAI
+
+"""Administracion de memoria"""
+from langchain.memory import ConversationBufferMemory
+buffer_memory = ConversationBufferMemory()
+
+from langchain.chains import ConversationChain
+conversation = ConversationChain(
+    llm=llm,
+    memory = buffer_memory,
+    verbose=True
+)
+
 
 # Show title and description.
 st.title("📄 Pizzería de Julian Ferrer")
